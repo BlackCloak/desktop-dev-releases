@@ -14,9 +14,12 @@ jobs:
     steps:
       - shell: bash
         run: |
-          expr 3 + 7 > math-homework.txt
+          expr 1 + 7 > dist_electron/math-homework1.txt
+          expr 2 + 7 > dist_electron/math-homework2.txt
+          expr 3 + 7 > dist_electron/math-homework3.txt
+          expr 4 + 7 > dist_electron/math-homework4.txt
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v3
         with:
           name: homework
-          path: math-homework.txt
+          path: dist_electron/*.txt
